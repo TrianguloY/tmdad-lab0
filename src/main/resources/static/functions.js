@@ -2,7 +2,7 @@ $(document).ready(function() {
     
     $("#search").submit(searchOnClick);
     
-    mustacheTemplate = "unloaded";
+    mustacheTemplate = "-unloaded-";
     
     $.get('template', function(template) {
         Mustache.parse(template);
@@ -12,6 +12,10 @@ $(document).ready(function() {
 
 function searchOnClick(event) {
     event.preventDefault();
+    
+    $("#resultsBlock").empty();
+    $("#loader").show();
+    
     var target = $(this).attr('action');
     var query = $("#q").val();
     $.get(target, { q: query } )
@@ -23,9 +27,11 @@ function onPostQuery(data){
     
     var rendered = Mustache.render(mustacheTemplate, data);
     
-    $("#resultsBlock").empty().append(rendered);
+    $("#loader").hide();
+    $("#resultsBlock").append(rendered);
 }
 
 function onFailQuery(){
-    $("#resultsBlock").empty().append("-error-");
+    $("#loader").hide();
+    $("#resultsBlock").append("-error-");
 }
