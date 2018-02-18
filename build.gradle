@@ -29,11 +29,11 @@ ext {
 }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-social-twitter')
-	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
-	compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-social-twitter')
+    compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+    compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-devtools')
     compile("org.webjars:bootstrap:${boostrapVersion}")
-	compile("org.webjars:font-awesome:${fontawesomeVersion}")
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile("org.webjars:font-awesome:${fontawesomeVersion}")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }

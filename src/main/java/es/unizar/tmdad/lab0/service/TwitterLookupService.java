@@ -8,6 +8,8 @@ import org.springframework.social.twitter.api.impl.TwitterTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import jdk.nashorn.internal.parser.JSONParser;
+import jdk.nashorn.internal.runtime.JSONFunctions;
 
 @Service
 public class TwitterLookupService {
@@ -29,7 +31,7 @@ public class TwitterLookupService {
     }
 
     public SearchResults emptyAnswer() {
-        return new SearchResults(Collections.emptyList(), new SearchMetadata(0,0 ));
+        return new SearchResults(Collections.emptyList(), new SearchMetadata(0, 0));
     }
 }
 
